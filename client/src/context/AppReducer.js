@@ -10,8 +10,9 @@ export default (state, action) => {
     case "DELETE_TRANSACTION":
       return {
         ...state,
+        loading: false,
         transactions: state.transactions.filter(
-          (transaction) => transaction.id !== action.payload
+          (transaction) => transaction._id !== action.payload
         ),
       };
 
